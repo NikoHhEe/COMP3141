@@ -78,7 +78,7 @@ simpleCirclePic :: Colour -> Float -> Picture
 simpleCirclePic col n =  map (\n -> Circle centerPO n col Solid SolidFill) rads
   where 
     centerPO = Point 400 400
-    rads = enumFromThenTo 1 (400 / n) 400
+    rads = enumFromThenTo (400 / n) (2 * (400 / n)) 400
 
 myRed :: Colour
 myRed = Colour 255 0 0 80
