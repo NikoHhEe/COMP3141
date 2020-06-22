@@ -6,22 +6,25 @@ import Data.List
 
 -- prop2 & 4, but not prop1 & 3 & 5
 dodgySort1 :: [Int] -> [Int]
-dodgySort1 xs = error "'dodgySort1' unimplemented"
+dodgySort1 xs = xs
 
 
 -- prop1 & 2 & 3, but not prop4 & 5
 dodgySort2 :: [Int] -> [Int]
-dodgySort2 xs = error "'dodgySort2' unimplemented"
+dodgySort2 xs = insertionSort (0:xs)
 
 
 -- prop1 & 3 & 4, but not prop2 & 5
 dodgySort3 :: [Int] -> [Int]
-dodgySort3 xs = error "'dodgySort3' unimplemented"
+dodgySort3 xs = take n [1..]
+  where n = length xs
 
 
 -- prop1 & 2 & 3 & 4, but not prop5
 dodgySort4 :: [Int] -> [Int]
-dodgySort4 xs = error "'dodgySort4' unimplemented"
+dodgySort4 [] = []
+dodgySort4 xs = insertionSort (tail ys)
+  where ys = xs ++ [100]
 
 
 -- Properties of sorting function    
